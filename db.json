@@ -1,18 +1,3 @@
 {
-  "products": [
-    {
-      "name": "Caderno",
-      "id": 1,
-      "desc": "Caderno brochurão de perfeita capadura",
-      "prec": 10,
-      "quant": 11,
-    },
-    {
-      "name": "Tarô",
-      "id": 2,
-      "desc": "Cartas de aprendizado das trevas",
-      "prec": 10,
-      "quant": 3,
-    }
-  ]
+  "products" : []
 }

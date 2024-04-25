@@ -3,5 +3,5 @@ export interface Product{
     name :  string,
     desc : string,
     prec : number,
-    quant : number,
+    quant : number
 }

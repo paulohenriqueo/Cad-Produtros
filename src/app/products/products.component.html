@@ -36,20 +36,20 @@
             </div>
           </div>
           <button type="submit" class="btn btn-primary"
-          >Cadastrar</button>
+          (click)="save()">Cadastrar</button>
         </form>
       </div>
     </div>
      <!-- Card centralizado -->
     <div class="card text-center" style="width: 800px; margin: 0 auto;">
-        <div class="card-body">
+        <div class="card-body mb-2">
       <h1 class="text-center mt-3">Produtos</h1>
       <br>
-      <div class="border border-primary p-3 my-1 mx-4 border-opacity-25 rounded-3 bg-info-subtle">
-        <h5 class="card-title" >{{product.name}}</h5>
-        <p class="card-text">{{product.desc}}</p>
-        <p class="card-text">{{product.prec}}</p>
-        <p class="card-text">{{product.quant}}</p>
+      <div *ngFor=" let product of products" class="border border-primary p-3 my-1 mx-4 border-opacity-25 rounded-3 bg-info-subtle">
+        <h5 class="card-title" >{{product.name}} #{{product.id}} </h5>
+        <p class="card-text">Descrição: {{product.desc}} </p>
+        <p class="card-text">Preço: {{product.prec}}</p>
+        <p class="card-text">Quantidade: {{product.quant}}</p>
         <div class="d-flex justify-content-evenly"></div>
       </div>
     </div>
