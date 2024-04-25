@@ -1,0 +1,59 @@
+<div class="container bg-info-subtle my-2 rounded-2 p-5">
+    <div class="col-4 m-auto pb-5">
+      <h1 class="text-center">Cadastro de Produtos</h1>
+      <div class="row">
+        <form>
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="nome" 
+            aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea class="form-control" 
+            id="descricao" 
+            rows="3" 
+            aria-describedby="emailHelp">
+        </textarea>
+          </div>
+          <div class="row d-flex justify-content-around text-center">
+            <div class="mb-3 col-4">
+              <label for="preco" class="form-label">Preço</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              id="preco">
+            </div>
+            <div class="mb-3 col-4">
+              <label for="quantidade" class="form-label">Quantidade</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              id="quantidade">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary"
+          >Cadastrar</button>
+        </form>
+      </div>
+    </div>
+     <!-- Card centralizado -->
+    <div class="card text-center" style="width: 800px; margin: 0 auto;">
+        <div class="card-body">
+      <h1 class="text-center mt-3">Produtos</h1>
+      <br>
+      <div class="border border-primary p-3 my-1 mx-4 border-opacity-25 rounded-3 bg-info-subtle">
+        <h5 class="card-title" >{{product.name}}</h5>
+        <p class="card-text">{{product.desc}}</p>
+        <p class="card-text">{{product.prec}}</p>
+        <p class="card-text">{{product.quant}}</p>
+        <div class="d-flex justify-content-evenly"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
