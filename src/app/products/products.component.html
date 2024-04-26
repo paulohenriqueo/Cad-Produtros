@@ -53,6 +53,10 @@
         <p class="card-text">Preço: {{product.prec}}</p>
         <p class="card-text">Quantidade: {{product.quant}}</p>
         <div class="d-flex justify-content-evenly"></div>
+        <div class="d-flex justify-content-evenly">
+          <button type="button" class="btn btn-outline-secondary" (click)="edit(product)">Editar</button>
+          <button type="button" class="btn btn-outline-secondary" (click)="delete(product)">Remover</button>
+        </div>
       </div>
     </div>
   </div>

@@ -40,10 +40,35 @@ export class ProductsComponent implements OnInit {
   }
 
   save(){
+    if (this.formGroupProduct.valid) {
+      if (this.isEditing) {
+        this.service.update(this.formGroupProduct.value).subscribe({
+          next : () => {
+            this.loadProducts();
+            this.isEditing = false;
+            this.formGroupProduct.reset();
+            this;this.isError = false;
+          }
+        })
+      }
+      else{
         this.service.save(this.formGroupProduct.value).subscribe({
           next : data => this.products.push(data)
-        });
+      });
+      this.formGroupProduct.reset();
+      this.isError = false;
       }
+    }
+  }
+  edit(product : Product){
+    this.formGroupProduct.setValue(product);
+    this.isEditing = true;
+  }
+  delete(product : Product){
+    this.service.delete(product).subscribe({
+      next: () => this.loadProducts()
+    });
+  }
     
   get name() : any {
     return this.formGroupProduct.get("name") 
