@@ -6,33 +6,35 @@
           <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input 
-            type="text" 
+            type="id" 
             class="form-control" 
-            id="nome" 
-            aria-describedby="emailHelp">
+            id="name" 
+            formControlName="name">
           </div>
           <div class="mb-3">
             <label for="descricao" class="form-label">Descrição</label>
             <textarea class="form-control" 
             id="descricao" 
             rows="3" 
-            aria-describedby="emailHelp">
+            formControlName="desc">
         </textarea>
           </div>
           <div class="row d-flex justify-content-around text-center">
             <div class="mb-3 col-4">
-              <label for="preco" class="form-label">Preço</label>
+              <label for="exampleFormControlInput1" class="form-label">Preço</label>
               <input 
-              type="text" 
+              type="number" 
               class="form-control" 
-              id="preco">
+              id="prec"
+              formControlName="prec">
             </div>
             <div class="mb-3 col-4">
-              <label for="quantidade" class="form-label">Quantidade</label>
+              <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
               <input 
-              type="text" 
+              type="number" 
               class="form-control" 
-              id="quantidade">
+              id="quant"
+              formControlName="quant">
             </div>
           </div>
           <button type="submit" class="btn btn-primary"

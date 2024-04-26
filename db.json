@@ -1,3 +1,18 @@
 {
-  "products" : []
+  "products": [
+    {
+      "id": 1,
+      "name": "caderno",
+      "desc": "asdf",
+      "prec": 10,
+      "quant": 4
+    },
+    {
+      "id": 2,
+      "name": "",
+      "desc": "",
+      "prec": null,
+      "quant": null
+    }
+  ]
 }
