@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
@@ -22,10 +22,10 @@ export class ProductsComponent implements OnInit {
               private service: ProductService){
     this.formGroupProduct = formBuilder.group({
       id : [''],
-      name : [''],
+      name : ['', [Validators.minLength(4), Validators.required]],
       desc : [''],
-      prec : [''],
-      quant : ['']
+      prec : ['', [Validators.required, Validators.min(1)]],
+      quant : ['', [Validators.required, Validators.min(1)]]
     });
   }
 
@@ -40,6 +40,9 @@ export class ProductsComponent implements OnInit {
   }
 
   save(){
+
+    this.isError = true;
+
     if (this.formGroupProduct.valid) {
       if (this.isEditing) {
         this.service.update(this.formGroupProduct.value).subscribe({
@@ -47,7 +50,7 @@ export class ProductsComponent implements OnInit {
             this.loadProducts();
             this.isEditing = false;
             this.formGroupProduct.reset();
-            this;this.isError = false;
+            this.isError = false;
           }
         })
       }
@@ -74,8 +77,13 @@ export class ProductsComponent implements OnInit {
     return this.formGroupProduct.get("name") 
   }
   get desc() : any {
-    return this.formGroupProduct.get("desc")
+    return this.formGroupProduct.get("prec")
   }
+  
+  get quant() : any {
+    return this.formGroupProduct.get("quant") 
+  }
+  
   
 }
 

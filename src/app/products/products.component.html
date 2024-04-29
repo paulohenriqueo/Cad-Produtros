@@ -10,6 +10,12 @@
             class="form-control" 
             id="name" 
             formControlName="name">
+            <small *ngIf="isError && name.hasError('minlength')" class="text-danger">
+            *O nome tem que ter no mínimo 4 caracteres!
+            </small>
+            <small *ngIf="isError && name.hasError('required')" class="text-danger">
+              *O nome é requerido!
+              </small>
           </div>
           <div class="mb-3">
             <label for="descricao" class="form-label">Descrição</label>
@@ -26,7 +32,7 @@
               type="number" 
               class="form-control" 
               id="prec"
-              formControlName="prec">
+              formControlName="prec"> 
             </div>
             <div class="mb-3 col-4">
               <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
@@ -35,6 +41,12 @@
               class="form-control" 
               id="quant"
               formControlName="quant">
+              <small *ngIf="isError && quant.hasError('required')" class="text-danger">
+              *A quantidade é requerida
+              </small>
+              <small *ngIf="isError && quant.hasError('min')" class="text-danger">
+                *A quantidade deve ser maior do que 0
+              </small>
             </div>
           </div>
           <button type="submit" class="btn btn-primary"
