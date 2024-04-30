@@ -33,6 +33,12 @@
               class="form-control" 
               id="prec"
               formControlName="prec"> 
+              <small *ngIf="isError && prec.hasError('required')" class="text-danger">
+                *O preço é requerido!
+              </small>
+              <small *ngIf="isError && prec.hasError('min')" class="text-danger">
+                *O preço deve ser maior do que 0!
+              </small>
             </div>
             <div class="mb-3 col-4">
               <label for="exampleFormControlInput1" class="form-label">Quantidade</label>
@@ -42,10 +48,10 @@
               id="quant"
               formControlName="quant">
               <small *ngIf="isError && quant.hasError('required')" class="text-danger">
-              *A quantidade é requerida
+              *A quantidade é requerida!
               </small>
               <small *ngIf="isError && quant.hasError('min')" class="text-danger">
-                *A quantidade deve ser maior do que 0
+                *A quantidade deve ser maior do que 0!
               </small>
             </div>
           </div>

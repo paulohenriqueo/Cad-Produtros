@@ -1,11 +1,3 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "lápis",
-      "desc": "bic",
-      "prec": 7,
-      "quant": 3
-    }
-  ]
+  "products": []
 }

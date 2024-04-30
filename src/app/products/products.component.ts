@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Component({
   selector: 'app-products',
@@ -17,6 +18,7 @@ export class ProductsComponent implements OnInit {
   isEditing : boolean = false;
 
   isError : boolean = false;
+
 
   constructor(private formBuilder: FormBuilder,
               private service: ProductService){
@@ -83,9 +85,11 @@ export class ProductsComponent implements OnInit {
   get quant() : any {
     return this.formGroupProduct.get("quant") 
   }
+
+  
+  get prec() : any {
+    return this.formGroupProduct.get("prec") 
+  }
   
   
 }
-
-
-
